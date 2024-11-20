@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>About Me - Tech Solutions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.navbar {
+    background-color:grey;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.navbar .logo a {
+    color: brown;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 100px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links li a:hover {
+    color:blue;
+    justify-content: space-around;
+
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color:blue;
+}
+
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  height:250px;
+  color: #333;
+}
+
+
+.hero {
+  background:orange;
+  color: #fff;
+  padding: 80px 20px;
+  height: 250px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+
+.about-me {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.about-me-content {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  margin-right: 40px; 
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#typing-text-container {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.about-image-container {
+  flex-shrink: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: 20px; 
+}
+
+.circular-image {
+  width: 200px;      
+  height: 200px;     
+  border-radius: 50%;  
+    object-fit: cover;  }
+
+/* Footer Section */
+.footer {
+  background-color:gray;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-me-content {
+    flex-direction: column;
+    align-items: center; /* Center align text and image on smaller screens */
+  }
+
+  .about-image-container {
+    margin-top: 20px; /* Add space between the image and text on small screens */
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+</style>
+
+<body>
+
+    <nav>
+       <!-- Social Icons -->
+       <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    </nav>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">L.NKANTA</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+       
+    </nav>
+
+
+  <!-- Header Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>About Me</h1>
+      <p>Learn more about my background, skills, and what drives my passion for technology.</p>
+    </div>
+     <!-- Image Content (circular and fixed position) -->
+     <div class="about-image-container">
+        <img src="images/goody.jpg" alt="About Me Image" class="circular-image">
+      </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about-me" class="about-me">
+    <div class="container">
+      <div class="about-me-content">
+        <!-- Text Content (typing effect) -->
+        <div class="about-text">
+          <h2>My Journey</h2>
+          <div id="typing-text-container">
+            <!-- Text will be typed here line by line -->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Tech Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script >
+    // script.js
+document.addEventListener("DOMContentLoaded", function() {
+  const typingTextContainer = document.getElementById('typing-text-container');
+  
+  // Text lines that will be typed one by one
+  const textLines = [
+    "Hello! I'm Lordship Nkanta, a passionate software developer with a focus on web development, mobile app development, and AI solutions.",
+    "With over 4 months of experience, I have helped numerous clients transform their ideas into functional and user-friendly digital products.",
+    "I believe in creating scalable and innovative solutions that drive business success.",
+    "My expertise spans across multiple programming languages, frameworks, and tools including JavaScript, Python, React, Node.js, and machine learning technologies.",
+    "I'm always eager to learn and improve, and I thrive on solving complex challenges in the tech world.",
+    "Whether it’s building complex systems, automating processes, or creating beautiful user interfaces, my goal is to deliver high-quality results that exceed expectations.",
+    "My passion for technology fuels my desire to keep exploring new technologies and to build solutions that matter."
+  ];
+  
+  let lineIndex = 0;  // To keep track of which line to type next
+  let charIndex = 0;  // To keep track of which character in the line to type
+  
+  function typeLine() {
+    if (lineIndex < textLines.length) {
+      // Start typing the current line
+      let currentLine = textLines[lineIndex];
+      let typedLine = currentLine.substring(0, charIndex);
+      typingTextContainer.innerHTML = typedLine + "<br>"; // Add the new line content
+      
+      // If there are still characters in the current line, continue typing
+      if (charIndex < currentLine.length) {
+        charIndex++;
+        setTimeout(typeLine, 100); // Adjust the speed of typing (100ms per character)
+      } else {
+        
+        lineIndex++;
+        charIndex = 0; 
+        setTimeout(typeLine, 500); 
+      }
+    }
+  }
+
+  typeLine(); 
+    });
+
+  </script> 
+</body>
+</html>
